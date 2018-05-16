@@ -71,7 +71,5 @@ db.connect('mongodb://Artem:1234@ds219100.mlab.com:19100/museum-app',function (e
     if (err) {
         return console.log(err);
     }
-    app.listen(3012,function () {
-    console.log('API app started');
-})
+    app.listen(process.env.PORT || 5000);
 });
