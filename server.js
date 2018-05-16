@@ -11,9 +11,8 @@ var exponatsController=require('./controllers/exponats');
 var usersController=require('./controllers/users');
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
-// app.use(methodOverride());
 app.use(cors());
 
 app.use(function(req,res,next){
