@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID=require('mongodb').ObjectID;
-var cors = require('cors');
 
 var app = express();
 var db = require('./db');
@@ -12,17 +11,6 @@ var usersController=require('./controllers/users');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
-                                         // log every request to the console            // parse application/x-www-form-urlencoded                                     // parse application/json
-app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as js
-app.use(cors());
-
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header('Access-Control-Allow-Methods', 'DELETE, PUT');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 var exhibitions = [];
 var exponats = [];
