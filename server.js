@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID=require('mongodb').ObjectID;
 
+var cors = require('cors');
 var app = express();
 var db = require('./db');
 var exhibitionsController=require('./controllers/exhibitions');
@@ -10,7 +11,17 @@ var exponatsController=require('./controllers/exponats');
 var usersController=require('./controllers/users');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+// app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
+// app.use(methodOverride());
+app.use(cors());
+
+app.use(function(req,res,next){
+	res.header("Acces-Control-Allow-Origin","*");
+	res.header('Acces-Control-Allow-Origin','DELETE','PUT');
+	res.header("Acces-Control-Allow-Origin","Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
 
 var exhibitions = [];
 var exponats = [];
@@ -60,5 +71,7 @@ db.connect('mongodb://Artem:1234@ds219100.mlab.com:19100/museum-app',function (e
     if (err) {
         return console.log(err);
     }
-    app.listen(process.env.PORT || 5000);
+    app.listen(3012,function () {
+    console.log('API app started');
+})
 });
