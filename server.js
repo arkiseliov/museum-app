@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID=require('mongodb').ObjectID;
-var cors = require('cors');
 
 var app = express();
 var db = require('./db');
@@ -12,7 +11,7 @@ var usersController=require('./controllers/users');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors());
+
 
 app.all(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
