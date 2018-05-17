@@ -22,7 +22,7 @@ exports.findById = function (req,res) {
 
 exports.create = function (req,res) {
     var exponat={
-        name:req.body.name,
+        exponame:req.body.name,
         description:req.body.description,
         image:req.body.image,
         exhibname:req.body.exhibname
