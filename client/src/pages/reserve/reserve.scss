@@ -1,0 +1,17 @@
+.ios, .md
+{
+  page-reserve {
+    ion-item {
+      background-color: #2F4F4F;
+      border-bottom: none !important;
+    }
+
+    ion-label {
+      white-space: normal;
+    }
+
+    ion-item-sliding {
+      margin: 10px;
+    }
+  }
+}

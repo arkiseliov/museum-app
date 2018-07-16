@@ -1,0 +1,23 @@
+page-about {
+  .zebra {
+    margin:10%;
+    list-style: none;
+    border-left: 10px solid #2f4f4f;
+    padding: 0;
+  }
+  .zebra li {padding: 10px;}
+  .zebra li:nth-child(odd) {background: #E1F1FF;}
+  .zebra li:nth-child(even) {background: white;}
+  h4{
+    text-align: center;
+    color: darkgreen;
+  }
+  .intro {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+    font-size: 15pt;
+  }
+  .free{
+    margin-top: 10%;
+    line-height: 1.5em;
+  }
+}

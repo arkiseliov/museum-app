@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="darkslategrey">
+    <ion-title>{{(view | async)?.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card color="darkslategrey">
+    <ion-card-header>
+      <img src="{{(view|async)?.image}}">
+      <ion-card-title>Описание</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{(view | async)?.description}}</p>
+      <div class="date">
+        <h5>Выставка:</h5>
+        {{(view|async)?.exhibname}}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

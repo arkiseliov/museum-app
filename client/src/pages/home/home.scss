@@ -1,0 +1,24 @@
+page-home {
+  .block{
+    position: relative;
+    .offset h4{
+      left: 10%;
+      margin-top:10px ;
+      color: black;
+    }
+  }
+  h3 {
+    position	: absolute;
+    top		: 65%;
+    margin-left: 5%;
+    width		: 100%;
+  }
+  h3 span {
+    color			: white;
+    font			: bold 20px/35px Helvetica, Sans-Serif;
+    letter-spacing		: -1px;
+    background		: rgba(0, 0, 0, 0.7);
+    padding			: 10px;
+  }
+
+}

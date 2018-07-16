@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar transparent>
+    <ion-title>Заявка</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--<p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>-->
+  <ion-list no-lines>
+    <!--<form [formGroup]="myGroupForm">-->
+    <ion-item>
+      <ion-label floating>Имя</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Фамилиля</ion-label>
+      <ion-input [(ngModel)]="surname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Дата: </ion-label>
+      <ion-input id="date" type="date" [(ngModel)]="date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Выставка</ion-label>
+      <ion-select [(ngModel)]="exhibname">
+        <ion-option value="Айвазовский и маринисты">Айвазовский и маринисты</ion-option>
+        <ion-option value="Я вернулся в мой город...">Я вернулся в мой город...</ion-option>
+        <ion-option value="Территория земных надежд">Территория земных надежд</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Группа (количество человек)</ion-label>
+      <ion-select [(ngModel)]="pgroup">
+        <ion-option value="1-3">1-3</ion-option>
+        <ion-option value="4-8">4-8</ion-option>
+        <ion-option value="9-15">9-15</ion-option>
+        <ion-option value="16 и больше">>16</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Телефон</ion-label>
+      <ion-input id="telNo" name="telNo" type="tel" placeholder="123-45-5638901" minlength="9" maxlength="14"></ion-input>
+    </ion-item>
+
+    <!--</form>-->
+  </ion-list>
+
+  <button ion-button full color="secondary" (click)="save()">Save</button>
+
+</ion-content>

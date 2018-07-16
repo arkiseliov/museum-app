@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="darkslategrey">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Выставки</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list class="block" >
+      <ion-item *ngFor="let post of views" (click)="navigateToDetail(post._id)">
+        <img src="{{post.image}}">
+        <h3><span>{{post.name}}</span></h3>
+      </ion-item>
+    </ion-list>
+</ion-content>

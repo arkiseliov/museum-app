@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="darkslategrey">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Экспонаты</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar placeholder="Найти"  [(ngModel)]="mySearch"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let view of views " (click)="navigateToDetail(view._id)">
+      <div *ngIf="matchesSearch(view)">
+      <img src="{{view.image}}">
+      <h3><span>{{view.exponame}}</span></h3>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
